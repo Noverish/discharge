@@ -15,7 +15,7 @@ export default function App() {
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
-    axios({ url: 'http://home.hyunsub.kim:4284' })
+    axios({ url: 'https://home.hyunsub.kim:4284' })
       .then((res: AxiosResponse) => {
         setPeople(res.data);
       });

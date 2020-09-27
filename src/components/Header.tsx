@@ -21,7 +21,7 @@ export default ({ className }: Props) => {
         </div>
         <div className="navbar-collapse collapse" id="navbar-main">
           <ul className="nav navbar-nav navbar-right">
-            <li><a href="http://github/Noverish/discharge" target="_blank" rel="noopener noreferrer" className="btn btn-link">Github</a></li>
+            <li><a href="https://github.com/Noverish/discharge" target="_blank" rel="noopener noreferrer" className="btn btn-link">Github</a></li>
           </ul>
         </div>
       </div>
