@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.6bbb67ff.chunk.css",
-    "main.js": "/static/js/main.ceeca882.chunk.js",
-    "main.js.map": "/static/js/main.ceeca882.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.741cdd4b.js",
-    "runtime-main.js.map": "/static/js/runtime-main.741cdd4b.js.map",
-    "static/js/2.747304e0.chunk.js": "/static/js/2.747304e0.chunk.js",
-    "static/js/2.747304e0.chunk.js.map": "/static/js/2.747304e0.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.839b5d932421e67db83bf2349d5fa3ec.js": "/precache-manifest.839b5d932421e67db83bf2349d5fa3ec.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.6bbb67ff.chunk.css.map": "/static/css/main.6bbb67ff.chunk.css.map",
-    "static/js/2.747304e0.chunk.js.LICENSE.txt": "/static/js/2.747304e0.chunk.js.LICENSE.txt"
+    "main.css": "/discharge/static/css/main.6bbb67ff.chunk.css",
+    "main.js": "/discharge/static/js/main.ceeca882.chunk.js",
+    "main.js.map": "/discharge/static/js/main.ceeca882.chunk.js.map",
+    "runtime-main.js": "/discharge/static/js/runtime-main.f87f68ea.js",
+    "runtime-main.js.map": "/discharge/static/js/runtime-main.f87f68ea.js.map",
+    "static/js/2.747304e0.chunk.js": "/discharge/static/js/2.747304e0.chunk.js",
+    "static/js/2.747304e0.chunk.js.map": "/discharge/static/js/2.747304e0.chunk.js.map",
+    "index.html": "/discharge/index.html",
+    "precache-manifest.0e98ecb8f9f9d66b7105d3f87f9684fd.js": "/discharge/precache-manifest.0e98ecb8f9f9d66b7105d3f87f9684fd.js",
+    "service-worker.js": "/discharge/service-worker.js",
+    "static/css/main.6bbb67ff.chunk.css.map": "/discharge/static/css/main.6bbb67ff.chunk.css.map",
+    "static/js/2.747304e0.chunk.js.LICENSE.txt": "/discharge/static/js/2.747304e0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.741cdd4b.js",
+    "static/js/runtime-main.f87f68ea.js",
     "static/js/2.747304e0.chunk.js",
     "static/css/main.6bbb67ff.chunk.css",
     "static/js/main.ceeca882.chunk.js"
