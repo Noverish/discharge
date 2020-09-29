@@ -6,6 +6,8 @@
 
 개인정보보호를 위해 가명을 사용했습니다.
 
+PC에 최적화되어 있습니다.
+
 ### Screenshot
 
 ![Screenshot](https://raw.githubusercontent.com/Noverish/discharge/master/readme/screenshot1.png)
