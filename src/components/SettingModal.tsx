@@ -23,7 +23,7 @@ const LoginModal = () => {
       return;
     }
 
-    if (isNaN(new Date(target).getTime())) {
+    if (target && isNaN(new Date(target).getTime())) {
       setErrMsg('올바른 \'돌아가고 싶은 날짜\'를 입력해 주세요.');
       return;
     }

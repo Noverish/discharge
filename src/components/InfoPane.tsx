@@ -51,6 +51,11 @@ export default ({ person }: Props) => {
             {dates}
           </div>
         </div>
+        <div style={{ marginLeft: 'auto', textAlign: 'right' }}>
+          개인정보보호를 위해 가명을 사용했습니다.
+          <br />
+          이 데이터에 본인이 있는 것 같은 경우 상단의 Settings를 클릭해보세요.
+        </div>
       </div>
     </div>
   );
