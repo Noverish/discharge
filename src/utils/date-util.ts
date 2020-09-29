@@ -67,3 +67,10 @@ export function secondsToString(seconds: number): string {
 
   return `${days}일 ${hour}시간 ${min}분 ${sec}초`;
 }
+
+export function setDate(to: Date, from: Date) {
+  to.setFullYear(from.getFullYear());
+  to.setMonth(from.getMonth());
+  to.setDate(from.getDate());
+  return to;
+}

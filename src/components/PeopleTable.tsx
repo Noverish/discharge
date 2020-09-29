@@ -9,7 +9,7 @@ interface Props {
 
 export default ({ me, persons }: Props) => {
   const rows = persons.map((person, i) => {
-    const isMe = person.name === me.name && person.join === me.join;
+    const isMe = person.name === me.name && person.join.toDateString() === me.join.toDateString();
     return <PeopleRow index={i} person={person} isMe={isMe} key={person.name + person.join} />;
   });
 

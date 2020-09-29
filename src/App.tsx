@@ -1,55 +1,52 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import classnames from 'classnames';
-import axios, { AxiosResponse } from 'axios';
 
-import { FULFILLED_REMAIN_DAYS, WELCOME_SHOW_MILLIS, DISCHARGE_START_DATE } from './envs';
-import { Header, InfoPane, PeopleTable, WelcomeOverlay } from './components';
+import { DateRangeInput, Header, InfoPane, PeopleTable, SettingModal, WelcomeOverlay } from './components';
+import { FULFILLED_REMAIN_DAYS, WELCOME_SHOW_MILLIS } from './envs';
 import { WelcomeStatus } from './components/WelcomeOverlay';
-import { Person, PersonDao } from './models';
+import { addOneSec, RootState, setPeople } from './redux';
 import { dateUtil, processToPerson } from './utils';
+import { Person } from './models';
+import request from './api';
 import './App.scss';
 
 export default function App() {
+  const dispatch = useDispatch();
   const [welcomeStatus, setWelcomeStatus] = useState(WelcomeStatus.showing);
-  const [people, setPeople] = useState([] as PersonDao[]);
-  const [now, setNow] = useState(new Date());
+  const people = useSelector((state: RootState) => state.people);
+  const now = new Date(useSelector((state: RootState) => state.now));
+  const { name } = useSelector((state: RootState) => state.setting);
 
   useEffect(() => {
-    axios({ url: 'https://home.hyunsub.kim:4284' })
-      .then((res: AxiosResponse) => {
-        setPeople(res.data);
+    request()
+      .then((peopleParam) => {
+        dispatch(setPeople(peopleParam));
+
+        setInterval(
+          () => dispatch(addOneSec()),
+          1000,
+        );
       });
+  }, [dispatch]);
 
-    setInterval(
-      () => setNow((n) => dateUtil.addSecond(new Date(n), 1)),
-      1000,
-    );
-
+  useEffect(() => {
+    setWelcomeStatus(WelcomeStatus.showing);
     setTimeout(() => setWelcomeStatus(WelcomeStatus.closing), WELCOME_SHOW_MILLIS);
-  }, []);
+  }, [people]);
 
-  const onRangeChnage = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(e.target.value);
-    const n = dateUtil.addDay(new Date(), value);
-    setNow(n);
-  }, []);
+  if (people.length === 0) {
+    return <div />;
+  }
 
   const persons: Person[] = people
     .filter((p) => dateUtil.dayDiff(now, new Date(p.discharge)) < FULFILLED_REMAIN_DAYS)
     .filter((p) => new Date(p.transfer) < now)
     .map((p) => processToPerson(p, now));
 
-  if (persons.length === 0) {
-    return <div />;
-  }
-
-  const me = persons[0];
-
-  const min = dateUtil.dayDiff(new Date(DISCHARGE_START_DATE), new Date());
-  const max = (people.length > 0)
-    ? dateUtil.dayDiff(new Date(people[people.length - 1].discharge), new Date())
-    : dateUtil.dayDiff(new Date(Date.now() + 1), new Date());
-  const value = dateUtil.dayDiff(now, new Date());
+  const me = (name)
+    ? processToPerson(people.find(v => v.name === name)!, now)
+    : persons[0];
 
   return (
     <>
@@ -61,10 +58,11 @@ export default function App() {
       <Header className={classnames({ blur: welcomeStatus !== WelcomeStatus.closed })} />
       <div className={classnames('container-fluid', { blur: welcomeStatus !== WelcomeStatus.closed })} style={{ marginTop: '60px' }}>
         <InfoPane person={me} />
-        <h1>{now.toLocaleString()}</h1>
-        <input type="range" min={min} max={max} value={value} onChange={onRangeChnage} />
+        <h1>{new Date(now).toLocaleString()}</h1>
+        <DateRangeInput />
         <PeopleTable me={me} persons={persons} />
       </div>
+      <SettingModal />
     </>
   );
 }

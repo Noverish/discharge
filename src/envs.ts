@@ -22,3 +22,7 @@ export const PRIVATE_REDUCE_DATE = new Date('2019-06-01');
 export const PRIVATE_MAX_GRADE = 3;
 export const PRIVATE_FIRST_MAX_GRADE = 6;
 export const CORPORAL_MAX_GRADE = 6;
+
+export const NAME_HEADER_NAME = 'x-discharge-name';
+export const DATE_HEADER_NAME = 'x-discharge-date';
+export const TARGET_DATE_NAME = 'x-discharge-target-date';

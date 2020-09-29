@@ -23,6 +23,9 @@ export default ({ className }: Props) => {
           <ul className="nav navbar-nav navbar-right">
             <li><a href="https://github.com/Noverish/discharge" target="_blank" rel="noopener noreferrer" className="btn btn-link">Github</a></li>
           </ul>
+          <ul className="nav navbar-nav navbar-right">
+            <li><button type="button" className="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal">Settings</button></li>
+          </ul>
         </div>
       </div>
     </nav>
