@@ -1,9 +1,8 @@
-import React from 'react';
 import classnames from 'classnames';
-
+import React from 'react';
+import { CAN_DISCHARGE_DAY } from 'src/envs';
 import { Person } from 'src/models';
 import { dateUtil } from 'src/utils';
-import { CAN_DISCHARGE_DAY } from 'src/envs';
 
 const { dateToString } = dateUtil;
 
@@ -11,7 +10,7 @@ interface Props {
   person: Person;
 }
 
-export default ({ person }: Props) => {
+export default function InfoPane({ person }: Props) {
   const { name, join, transfer, discharge, rank, rankString, broken, daysLeft, percent } = person;
 
   const canDischarge = daysLeft < CAN_DISCHARGE_DAY;

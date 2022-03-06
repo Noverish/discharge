@@ -7,7 +7,7 @@ interface Props {
   persons: Person[];
 }
 
-export default ({ me, persons }: Props) => {
+export default function PeopleTable({ me, persons }: Props) {
   const rows = persons.map((person, i) => {
     const isMe = person.name === me.name && person.join.toDateString() === me.join.toDateString();
     return <PeopleRow index={i} person={person} isMe={isMe} key={person.name + person.join} />;

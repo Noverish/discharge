@@ -1,7 +1,7 @@
-import React from 'react';
 import classnames from 'classnames';
-import { dateUtil } from 'src/utils';
+import React from 'react';
 import { Person } from 'src/models';
+import { dateUtil } from 'src/utils';
 
 const { dateToString, secondsToString } = dateUtil;
 
@@ -11,7 +11,7 @@ interface Props {
   isMe: boolean;
 }
 
-export default ({ index, person, isMe }: Props) => {
+export default function PeopleRow({ index, person, isMe }: Props) {
   const {
     rank,
     rankString,

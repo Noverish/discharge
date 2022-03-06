@@ -5,17 +5,18 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
     "@types/classnames": "^2.2.10",
-    "@types/react": "^16.9.49",
-    "@types/react-dom": "^16.9.8",
+    "@types/react-dom": "^17.0.13",
     "@types/react-redux": "^7.1.9",
-    "axios": "^0.20.0",
+    "@types/react": "^17.0.39",
+    "axios": "^0.26.0",
     "classnames": "^2.2.6",
-    "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "gh-pages": "^3.2.3",
+    "node-sass": "^7.0.1",
+    "react-dom": "^17.0.2",
     "react-redux": "^7.2.1",
-    "react-scripts": "3.4.3",
-    "typescript": "^3.7.5"
+    "react-scripts": "^5.0.0",
+    "react": "^17.0.2",
+    "typescript": "^4.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,8 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^3.1.0"
   }
 }

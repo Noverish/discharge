@@ -1,11 +1,11 @@
-import React from 'react';
 import classnames from 'classnames';
+import React from 'react';
 
 interface Props {
   className?: string;
 }
 
-export default ({ className }: Props) => {
+export default function Header({ className }: Props) {
   const navClasses = classnames('navbar navbar-default navbar-fixed-top', className);
 
   return (

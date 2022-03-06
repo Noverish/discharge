@@ -1,11 +1,10 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { DISCHARGE_START_DATE } from 'src/envs';
 import { RootState, setNow } from 'src/redux';
 import { dateUtil } from 'src/utils';
 
-export default () => {
+export default function DateRangeInput() {
   const dispatch = useDispatch();
   const people = useSelector((state: RootState) => state.people);
   const now = new Date(useSelector((state: RootState) => state.now));

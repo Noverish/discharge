@@ -1,5 +1,5 @@
-import React from 'react';
 import classnames from 'classnames';
+import React from 'react';
 import { Person } from 'src/models';
 
 export enum WelcomeStatus {
@@ -14,10 +14,10 @@ interface Props {
   onTransitionEnd: (event: React.TransitionEvent<HTMLDivElement>) => void;
 }
 
-export default ({ person, status, onTransitionEnd }: Props) => {
+export default function WelcomeOverlay({ person, status, onTransitionEnd }: Props) {
   const { daysTotal, daysLeft, daysPast, broken, rank } = person;
 
-  // y = (total - (1 / total) * x^2) / 8
+  // y = (total - (1 / total) * x ^ 2) / 8
   const blurLevel = (daysTotal - (1 / daysTotal) * (daysPast ** 2)) / 8;
 
   const titleClasses = classnames('title', `rank-${rank}`, { broken });
